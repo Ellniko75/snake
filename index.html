@@ -3,27 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <canvas width="1280" height="720" style="background-color: rgb(97, 97, 97)"></canvas>
+    <div class="UI-message">
+      <h1>YOU DIED</h1>
+      <button class="restartButton">RESTART</button>
+    </div>
+    <canvas
+      width="1280"
+      height="720"
+      style="background-color: rgb(97, 97, 97)"
+    ></canvas>
   </body>
-  <script type="module">
-    import { playerFrame } from "./player.js";
-    import { strokeApple } from "./world.js";
-    import { collision } from "./collision.js";
-
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-
-    setInterval(() => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      collision();
-      strokeApple(ctx);
-      playerFrame(ctx);
-    }, 100);
-  </script>
-
+  <script type="module"></script>
+  <script src="./mainGame.js" type="module"></script>
   <script src="player.js" type="module"></script>
   <script src="world.js" type="module"></script>
   <script src="collision.js" type="module"></script>
